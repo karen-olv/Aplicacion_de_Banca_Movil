@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class support extends Controller
 {
-    //
+    public function support()
+    {
+        return view('support.support');
+    }
 }

@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class user extends Controller
 {
-    //
+    public function account()
+    {
+        return view('users.account');
+    }
 }
