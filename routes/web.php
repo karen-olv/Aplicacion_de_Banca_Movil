@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+// Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 Route::get('/security', [AuthController::class, 'security'])->name('security');
 
@@ -29,3 +29,15 @@ Route::get('/transactions/qr-payments', [transactions::class, 'qr'])->name('tran
 Route::get('/transactions/transfer', [transactions::class, 'transfer'])->name('transactions.transfer');
 
 Route::get('/users/account', [user::class, 'account'])->name('users.account');
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register.form');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
