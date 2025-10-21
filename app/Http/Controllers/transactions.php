@@ -18,6 +18,6 @@ class transactions extends Controller
 
     public function transfer()
     {
-        return view('transactions.transfer');
+        return view('transactions.transfers');
     }
 }
