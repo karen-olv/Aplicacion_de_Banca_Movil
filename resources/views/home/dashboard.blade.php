@@ -57,77 +57,14 @@
                         </div>
                     </a>
 
-                    <a href="{{ route('transfers') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Transferencias</h4>
-                                <p class="text-sm text-muted-foreground">Envía dinero a otras cuentas</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('qr-payments') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Pagos QR</h4>
-                                <p class="text-sm text-muted-foreground">Escanea o genera códigos QR</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('cards') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Gestión de Tarjetas</h4>
-                                <p class="text-sm text-muted-foreground">Administra tus tarjetas de débito y crédito</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('loans') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Préstamos</h4>
-                                <p class="text-sm text-muted-foreground">Solicita y gestiona tus préstamos</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('security') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Seguridad (2FA)</h4>
-                                <p class="text-sm text-muted-foreground">Configura la autenticación de dos factores</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
-
-                    <a href="{{ route('support') }}" class="block w-full p-6 bg-card border-2 border-border hover:border-foreground transition-all rounded-lg group">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-bold text-foreground mb-1">Soporte en Línea</h4>
-                                <p class="text-sm text-muted-foreground">Obtén ayuda y contacta con nosotros</p>
-                            </div>
-                            <svg class="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                    </a>
+                    {{--
+                    <a href="{{ route('transactions.transfer') }}" class="...">Transferencias</a>
+                    <a href="{{ route('qr-payments') }}" class="...">Pagos QR</a>
+                    <a href="{{ route('cards') }}" class="...">Gestión de Tarjetas</a>
+                    <a href="{{ route('loans') }}" class="...">Préstamos</a>
+                    <a href="{{ route('security') }}" class="...">Seguridad (2FA)</a>
+                    <a href="{{ route('support') }}" class="...">Soporte en Línea</a>
+                    --}}
                 </div>
             </div>
         </main>

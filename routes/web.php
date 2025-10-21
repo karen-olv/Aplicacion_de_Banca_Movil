@@ -30,6 +30,12 @@ Route::get('/transactions/transfer', [transactions::class, 'transfer'])->name('t
 
 Route::get('/users/account', [user::class, 'account'])->name('users.account');
 
+Route::get('/accounts', [user::class, 'account'])->name('accounts');
+
+Route::get('/transfers', [user::class, 'transfer'])->name('transfers');
+
+
+
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
@@ -38,6 +44,4 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [home::class, 'home'])->name('dashboard');
