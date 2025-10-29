@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClientesBancoController;
 use App\Http\Controllers\home;
 use App\Http\Controllers\layouts;
 use App\Http\Controllers\support;
@@ -29,3 +30,5 @@ Route::get('/transactions/qr-payments', [transactions::class, 'qr'])->name('tran
 Route::get('/transactions/transfer', [transactions::class, 'transfer'])->name('transactions.transfer');
 
 Route::get('/users/account', [user::class, 'account'])->name('users.account');
+Route::resource('clientes', App\Http\Controllers\ClientesController::class);
+Route::resource('clientes_banco', ClientesBancoController::class);

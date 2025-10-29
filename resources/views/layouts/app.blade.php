@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Bankario - Banca Móvil')</title>
+
+    {{-- Tailwind --}}
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         :root {
             --background: oklch(0.99 0 0);
@@ -50,9 +53,121 @@
         .hover\:bg-primary\/90:hover { background-color: var(--primary); opacity: 0.9; }
         .hover\:text-foreground:hover { color: var(--foreground); }
         .hover\:border-foreground:hover { border-color: var(--foreground); }
+
+        /* Estilos tipo Bootstrap para que nav-item/nav-link se vean coherentes */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--foreground);
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--foreground);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .logout-button {
+            background: transparent;
+            border: none;
+            padding: 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: var(--foreground);
+            text-decoration: none;
+        }
+
+        .logout-button:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body>
-@yield('content')
+<body class="bg-background text-foreground">
+
+    {{-- NAVBAR --}}
+    <nav class="navbar">
+        <div class="navbar-brand">
+            Bankario
+        </div>
+
+        <ul class="navbar-nav">
+            {{-- Links comunes visibles siempre --}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('transferencias.index') }}">Transferencias</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('perfil') }}">Mi Perfil</a>
+            </li>
+
+            {{-- Área pública: Login / Register cuando NO hay sesión --}}
+            @guest
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">Login</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">Register</a>
+            </li>
+            @endguest
+
+            {{-- === BLOQUE QUE ME PEDISTE AGREGAR DESPUÉS DE "Login" / "Register" === --}}
+            @auth
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('clientes.index') }}">Clientes</a>
+            </li>
+            @endauth
+            {{-- === FIN DEL BLOQUE NUEVO === --}}
+
+            {{-- Logout cuando SÍ hay sesión --}}
+            @auth
+            <li class="nav-item">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="logout-button">
+                        Cerrar sesión
+                    </button>
+                </form>
+            </li>
+            @endauth
+        </ul>
+    </nav>
+
+    {{-- CONTENIDO PRINCIPAL DINÁMICO --}}
+    <main class="max-w-7xl mx-auto p-6">
+        @yield('content')
+    </main>
+
 </body>
 </html>
